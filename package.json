@@ -1,0 +1,101 @@
+{
+  "name": "fortuna-dc",
+  "version": "1.6.12",
+  "description": "(Deprecated)Fortuna Discord bot",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "cls && node build/index.js",
+    "build": "tsc",
+    "eslint": "eslint src/",
+    "prettier": "prettier src --write --log-level warn",
+    "nodemon": "nodemon . | ts '[%d/%m/%y %H:%M:%S]'"
+  },
+  "keywords": [],
+  "author": "waseeen",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^1.7.0",
+    "@discordjs/collection": "^2.0.0",
+    "@discordjs/rest": "^2.2.0",
+    "@types/node": "^20.10.6",
+    "cron": "^3.1.6",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "google-auth-library": "^9.4.1",
+    "google-spreadsheet": "^4.1.1",
+    "moment": "^2.30.1",
+    "mysql2": "^3.6.5",
+    "plural-ru": "^2.0.2",
+    "trace-unhandled": "^2.0.1",
+    "typeorm": "^0.3.19"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-deprecation": "^2.0.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "tsconfigRootDir": "./",
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "deprecation"
+    ],
+    "rules": {
+      "linebreak-style": 0,
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "variable",
+          "format": [
+            "camelCase",
+            "UPPER_CASE",
+            "PascalCase"
+          ]
+        }
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ],
+      "no-mixed-spaces-and-tabs": "off",
+      "deprecation/deprecation": "error"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "useTabs": false,
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": true
+  },
+  "nodemonConfig": {
+    "watch": [
+      "build"
+    ],
+    "delay": "5000"
+  }
+}
